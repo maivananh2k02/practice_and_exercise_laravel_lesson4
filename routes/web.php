@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('home');
 });
 Route::group(['prefix' => 'customers'], function () {
-    Route::get('/', [CustomerController::class, 'index'])->name('customers.index');
+    Route::get('/', [CustomerController::class, 'index'])->name('customers.list');
     Route::get('/create', [CustomerController::class, 'create'])->name('customers.create');
     Route::post('/create', [CustomerController::class, 'store'])->name('customers.store');
     Route::get('/{id}/edit', [CustomerController::class, 'edit'])->name('customers.edit');

@@ -26,6 +26,6 @@ class CustomerSeeder extends Seeder
             ]);
         }
         DB::table('customer')->insert($dataArray);
-        //
+
     }
 }

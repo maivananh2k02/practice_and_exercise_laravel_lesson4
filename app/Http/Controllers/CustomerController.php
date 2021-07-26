@@ -18,10 +18,10 @@ class CustomerController extends Controller
 
     protected function create()
     {
-        return view(route('customer.create'));
+        return view('customers.create');
     }
 
-    protected function store(Request $request)
+    protected function store(Request $request): \Illuminate\Http\RedirectResponse
     {
         $customer = new Customer();
         $customer->name = $request->input('name');
@@ -30,7 +30,7 @@ class CustomerController extends Controller
         $customer->save();
 
         Session::flash('success', 'Tạo mới khách hàng thành công');
-        return redirect()->route('customers.index');
+        return redirect()->route('customers.list');
     }
 
     public function edit($id)
@@ -50,7 +50,7 @@ class CustomerController extends Controller
         //dung session de dua ra thong bao
         Session::flash('success', 'Cập nhật khách hàng thành công');
         //cap nhat xong quay ve trang danh sach khach hang
-        return redirect()->route('customers.index');
+        return redirect()->route('customers.list');
     }
 
     public function destroy($id)
@@ -62,7 +62,7 @@ class CustomerController extends Controller
         Session::flash('success', 'Xóa khách hàng thành công');
 
         //xoa xong quay ve trang danh sach khach hang
-        return redirect()->route('customers.index');
+        return redirect()->route('customers.list');
     }
 
 

@@ -18,7 +18,7 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">stt</th>
                     <th scope="col">Tên khách hàng</th>
                     <th scope="col">Ngày Sinh</th>
                     <th scope="col">Email</th>
